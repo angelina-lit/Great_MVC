@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GreatWeb.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace GreatWeb.Data
 {
@@ -6,7 +8,9 @@ namespace GreatWeb.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-
+            
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
