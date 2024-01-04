@@ -1,4 +1,4 @@
-namespace GreatWeb.Models
+namespace Great.Models
 {
     public class ErrorViewModel
     {

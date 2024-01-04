@@ -1,8 +1,7 @@
-﻿using GreatWeb.Models;
+﻿using Great.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 
-namespace GreatWeb.Data
+namespace Great.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {
@@ -12,7 +11,7 @@ namespace GreatWeb.Data
         }
 
         public DbSet<Category> Categories { get; set; }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(

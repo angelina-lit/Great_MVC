@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace GreatWeb.Models
+namespace Great.Models
 {
 	public class Category
 	{

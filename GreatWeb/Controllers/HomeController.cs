@@ -1,8 +1,8 @@
-using GreatWeb.Models;
+using Great.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace GreatWeb.Controllers
+namespace Great.Controllers
 {
     public class HomeController : Controller
     {

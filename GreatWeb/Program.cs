@@ -1,4 +1,4 @@
-using GreatWeb.Data;
+using Great.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

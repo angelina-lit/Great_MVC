@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace GreatWeb.Migrations
+namespace Great.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

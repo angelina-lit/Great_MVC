@@ -1,5 +1,5 @@
-﻿using GreatWeb.Data;
-using GreatWeb.Models;
+﻿using Great.DataAccess.Data;
+using Great.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GreatWeb.Controllers
