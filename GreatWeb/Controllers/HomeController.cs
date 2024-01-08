@@ -1,8 +1,8 @@
-using Great.Models;
+using GreatFilms.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Great.Controllers
+namespace GreatFilms.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Great.Models
+namespace GreatFilms.Models
 {
 	public class Category
 	{

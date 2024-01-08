@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Great.Utility
+namespace GreatFilms.Utility
 {
 	public static class SD
 	{

@@ -1,7 +1,7 @@
-﻿using Great.Models;
+﻿using GreatFilms.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Great.DataAccess.Data
+namespace GreatFilms.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

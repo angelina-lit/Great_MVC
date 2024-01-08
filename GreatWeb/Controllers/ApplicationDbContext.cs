@@ -1,4 +1,4 @@
-﻿namespace Great.Controllers
+﻿namespace GreatFilms.Controllers
 {
 	internal class ApplicationDbContext
 	{

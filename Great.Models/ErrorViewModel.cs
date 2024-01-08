@@ -1,4 +1,4 @@
-namespace Great.Models
+namespace GreatFilms.Models
 {
     public class ErrorViewModel
     {
