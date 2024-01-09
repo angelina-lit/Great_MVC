@@ -1,7 +1,9 @@
 ﻿using GreatFilms.DataAccess.Data;
 using GreatFilms.DataAccess.Repository.IRepository;
 using GreatFilms.Models;
+using GreatFilms.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GreatFilmsWeb.Areas.Admin.Controllers
 {
@@ -21,19 +23,37 @@ namespace GreatFilmsWeb.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            ProductVM productVM = new()
+            {
+                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+				{
+					Text = u.Name,
+					Value = u.Id.ToString(),
+				}),
+                Product = new Product()
+            };
+
+			return View(productVM);
         }
         [HttpPost]
-        public IActionResult Create(Product obj)
+        public IActionResult Create(ProductVM productVM)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Product.Add(obj);
+                _unitOfWork.Product.Add(productVM.Product);
                 _unitOfWork.Save();
                 TempData["success"] = "Product create successfully!";
                 return RedirectToAction("Index");
             }
-            return View();
+            else
+            {
+				productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString(),
+                });
+				return View(productVM);
+			}
         }
 
         public IActionResult Edit(int? id)
