@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreatFilms.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240108130701_addProductsToDb")]
-    partial class addProductsToDb
+    [Migration("20240109104947_AddForeignKeyForCategoryProductRelation")]
+    partial class AddForeignKeyForCategoryProductRelation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,6 +73,9 @@ namespace GreatFilms.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -103,12 +106,15 @@ namespace GreatFilms.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Products");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            CategoryId = 1,
                             Description = "Hardin (Hero Fiennes Tiffin) is struggling to move forward. Besieged by writer’s block and the crushing breakup with Tessa (Josephine Landford), Hardin travels to Portugal in search of a woman he wronged in the past – and to find himself. Hoping to win back Tessa, he realises he needs to change his ways before he can make the ultimate commitment. ",
                             ListPrice = 99.0,
                             Price = 90.0,
@@ -121,6 +127,7 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 2,
+                            CategoryId = 2,
                             Description = "OPTIMUS PRIME and the AUTOBOTS take on their biggest challenge yet in this adrenaline-fueled adbentire with pulse-pounding action. When a new threat capable of destroying the entire planet emerges, they must team up with a powerful faction known as the MAXIMALS. With the fate of humanity hanging in the balance Noah (Anthony Ramos) and Elena (Dominique Fishback) will do whatever it takes to help the TRANSFORMERS allies as they engage in the ultimatebattle to save Earth in this exciting new chapter in the TRANSFORMERS saga. ",
                             ListPrice = 40.0,
                             Price = 30.0,
@@ -133,6 +140,7 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 3,
+                            CategoryId = 3,
                             Description = "Inspired by the 1985 true story of a drug runner's plane crash, missing cocaine, and the black bear that ate it, this wild dark comedy finds an oddball group of cops, criminals, tourists and teens converging in a Georgia forest where a 500- pound apex predator has ingested a staggering amount of cocaine and gone on a coke-fueled rampage for more blow … and blood. ",
                             ListPrice = 55.0,
                             Price = 50.0,
@@ -145,6 +153,7 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 4,
+                            CategoryId = 1,
                             Description = "After a catastrophic crash on an unknown planet, pilot Mills (Adam Driver) quickly discovers he's actually stranded on Earth... 65 million years ago. Now, with only one chance at rescue, Mills and the only other survivor, Koa (Ariana Greenblatt), must make their way across an unknown terrain riddled with dangerous prehistoric creatures in an epic fight to survive. From the writers of A Quiet Place and producer Sam Raimi comes 65, a sci-fi thriller starring Adam Driver, Ariana Greenblatt, and Chloe Coleman. ",
                             ListPrice = 70.0,
                             Price = 65.0,
@@ -157,6 +166,7 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 5,
+                            CategoryId = 2,
                             Description = "Maddie thinks she's found the answer to her financial troubles when she discovers an intriguing job listing: wealthy helicopter parents looking for someone to \"date\" their introverted 19-year-old son, Percy, and bring him out of his shell before he leaves for college. But awkward Percy proves to be a real challenge, and time is running out. She has one summer to make him a man or lose it all. ",
                             ListPrice = 30.0,
                             Price = 27.0,
@@ -169,15 +179,27 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 6,
+                            CategoryId = 2,
                             Description = "An ordinary young boy called Nikolas sets out on an extraordinary adventure into the snowy north in search of his father who is on a quest to discover the fabled village of the elves, Elfhelm. Taking with him a headstrong reindeer called Blitzen and a loyal pet mouse, Nikolas soon meets his destiny in this magical, comic and endearing story that proves nothing is impossible. ",
                             ListPrice = 25.0,
                             Price = 23.0,
                             Price100 = 20.0,
                             Price50 = 22.0,
                             Producer = "Gil Kenan",
-                            SKU = "5G3S966666",
+                            SKU = "5G3S9R66666",
                             Title = "Boy Called Christmas, A"
                         });
+                });
+
+            modelBuilder.Entity("GreatFilms.Models.Product", b =>
+                {
+                    b.HasOne("GreatFilms.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

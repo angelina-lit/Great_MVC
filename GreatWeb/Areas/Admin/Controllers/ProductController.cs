@@ -21,9 +21,9 @@ namespace GreatFilmsWeb.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-			return View();
+            return View();
         }
-		[HttpPost]
+        [HttpPost]
         public IActionResult Create(Product obj)
         {
             if (ModelState.IsValid)

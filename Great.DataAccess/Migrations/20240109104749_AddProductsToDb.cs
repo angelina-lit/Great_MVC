@@ -7,7 +7,7 @@
 namespace GreatFilms.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class addProductsToDb : Migration
+    public partial class AddProductsToDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -42,7 +42,7 @@ namespace GreatFilms.DataAccess.Migrations
                     { 3, "Inspired by the 1985 true story of a drug runner's plane crash, missing cocaine, and the black bear that ate it, this wild dark comedy finds an oddball group of cops, criminals, tourists and teens converging in a Georgia forest where a 500- pound apex predator has ingested a staggering amount of cocaine and gone on a coke-fueled rampage for more blow … and blood. ", 55.0, 50.0, 35.0, 40.0, "Elizabeth Banks", "5G3S9R33333", "Cocaine Bear" },
                     { 4, "After a catastrophic crash on an unknown planet, pilot Mills (Adam Driver) quickly discovers he's actually stranded on Earth... 65 million years ago. Now, with only one chance at rescue, Mills and the only other survivor, Koa (Ariana Greenblatt), must make their way across an unknown terrain riddled with dangerous prehistoric creatures in an epic fight to survive. From the writers of A Quiet Place and producer Sam Raimi comes 65, a sci-fi thriller starring Adam Driver, Ariana Greenblatt, and Chloe Coleman. ", 70.0, 65.0, 55.0, 60.0, "Scott Beck", "5G3S9R44444", "65 (2023)" },
                     { 5, "Maddie thinks she's found the answer to her financial troubles when she discovers an intriguing job listing: wealthy helicopter parents looking for someone to \"date\" their introverted 19-year-old son, Percy, and bring him out of his shell before he leaves for college. But awkward Percy proves to be a real challenge, and time is running out. She has one summer to make him a man or lose it all. ", 30.0, 27.0, 20.0, 25.0, "Alex Saks", "5G3S9R55555", "No Hard Feelings" },
-                    { 6, "An ordinary young boy called Nikolas sets out on an extraordinary adventure into the snowy north in search of his father who is on a quest to discover the fabled village of the elves, Elfhelm. Taking with him a headstrong reindeer called Blitzen and a loyal pet mouse, Nikolas soon meets his destiny in this magical, comic and endearing story that proves nothing is impossible. ", 25.0, 23.0, 20.0, 22.0, "Gil Kenan", "5G3S966666", "Boy Called Christmas, A" }
+                    { 6, "An ordinary young boy called Nikolas sets out on an extraordinary adventure into the snowy north in search of his father who is on a quest to discover the fabled village of the elves, Elfhelm. Taking with him a headstrong reindeer called Blitzen and a loyal pet mouse, Nikolas soon meets his destiny in this magical, comic and endearing story that proves nothing is impossible. ", 25.0, 23.0, 20.0, 22.0, "Gil Kenan", "5G3S9R66666", "Boy Called Christmas, A" }
                 });
         }
 

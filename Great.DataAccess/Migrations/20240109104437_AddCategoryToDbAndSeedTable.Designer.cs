@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreatFilms.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240104153232_AddCategoryToDbAndSeedTable")]
+    [Migration("20240109104437_AddCategoryToDbAndSeedTable")]
     partial class AddCategoryToDbAndSeedTable
     {
         /// <inheritdoc />
