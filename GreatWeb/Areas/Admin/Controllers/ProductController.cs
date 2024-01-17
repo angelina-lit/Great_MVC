@@ -2,12 +2,15 @@
 using GreatFilms.DataAccess.Repository.IRepository;
 using GreatFilms.Models;
 using GreatFilms.Models.ViewModels;
+using GreatFilms.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GreatFilmsWeb.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Authorize(Roles = SD.Role_Admin)]
 	public class ProductController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;

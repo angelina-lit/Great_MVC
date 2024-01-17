@@ -1,11 +1,14 @@
 ﻿using GreatFilms.DataAccess.Data;
 using GreatFilms.DataAccess.Repository.IRepository;
 using GreatFilms.Models;
+using GreatFilms.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GreatFilmsWeb.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
 	public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
