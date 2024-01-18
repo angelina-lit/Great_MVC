@@ -4,6 +4,7 @@ using GreatFilms.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreatFilms.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240118114324_AddCompanyTable")]
+    partial class AddCompanyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,38 +96,6 @@ namespace GreatFilms.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Tech City",
-                            Name = "Tech Solution",
-                            PhoneNumber = "77777777777",
-                            PostalCode = "12121",
-                            State = "IL",
-                            StreetAddress = "123 Tech st"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "HR City",
-                            Name = "HR Solution",
-                            PhoneNumber = "77777777778",
-                            PostalCode = "12122",
-                            State = "RI",
-                            StreetAddress = "123 HR st"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Break City",
-                            Name = "Break Solution",
-                            PhoneNumber = "77777777779",
-                            PostalCode = "12123",
-                            State = "NY",
-                            StreetAddress = "123 Break st"
-                        });
                 });
 
             modelBuilder.Entity("GreatFilms.Models.Product", b =>
