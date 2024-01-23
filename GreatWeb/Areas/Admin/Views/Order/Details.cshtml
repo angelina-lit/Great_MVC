@@ -1,6 +1,7 @@
 ﻿@model OrderVM
 
 <form method="post">
+	<input asp-for="OrderHeader.Id" hidden />
 	<br />
 	<div class="container">
 		<div class="card">
@@ -135,7 +136,14 @@
 							<div class="row my-1">
 								<div class="col-3">Tracking</div>
 								<div class="col-9">
-									<input asp-for="OrderHeader.TrackingNumber" readonly type="text" class="form-control" />
+									@if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
+									{
+										<input asp-for="OrderHeader.TrackingNumber" type="text" class="form-control" />
+									}
+									else
+									{
+										<input asp-for="OrderHeader.TrackingNumber" readonly type="text" class="form-control" />
+									}
 								</div>
 							</div>
 							<div class="row my-1">
@@ -187,7 +195,7 @@
 							</div>
 							@if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
 							{
-								<input type="submit" class="btn btn-warning form-control my-1" value="Update Order Details" />
+								<button type="submit" asp-action="UpdateOrderDetails" class="btn btn-warning form-control my-1">Update Order Details</button>
 							}
 
 						</div>
@@ -195,31 +203,32 @@
 							<h4 class="d-flex justify-content-between align-items-center mb-3">
 								<span class="text-primary">Order Summary</span>
 							</h4>
-							<label class="btn btn-outline-primary form-control my-2">Order Status - XXOrderStatusXX</label>
+							<label class="btn btn-outline-primary form-control my-2">Order Status - @Model.OrderHeader.OrderStatus</label>
 
 							<ul class="list-group mb-3">
-
+								@foreach(var detail in Model.OrderDetail) {
 								<li class="list-group-item d-flex justify-content-between p-2">
 									<div class="row container">
 										<div class="col-8">
 
-											<h6 class="my-0 text-primary">Title</h6>
-											<small class="text-muted">Price : $$$</small><br />
-											<small class="text-muted">Quantity : XX</small>
+											<h6 class="my-0 text-primary">@detail.Product.Title</h6>
+												<small class="text-muted">Price : @detail.Price.ToString("c", new System.Globalization.CultureInfo("en-US"))</small><br />
+											<small class="text-muted">Quantity : @detail.Count</small>
 										</div>
 										<div class="col-4 text-end">
-											<p class="text-success">Count * Price</p>
+												<p class="text-success">@((detail.Count * detail.Price).ToString("c", new System.Globalization.CultureInfo("en-US")))</p>
 										</div>
 									</div>
 								</li>
-
+								}
+								 
 								<li class="list-group-item bg-primary">
 									<div class="row container">
 										<div class="col-6">
 											<h5 class="text-white">TOTAL </h5>
 										</div>
 										<div class="col-6 text-end">
-											<h5 class="text-white">$$$$</h5>
+											<h5 class="text-white">@Model.OrderHeader.OrderTotal.ToString("c", new System.Globalization.CultureInfo("en-US"))</h5>
 										</div>
 									</div>
 								</li>
