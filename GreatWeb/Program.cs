@@ -23,6 +23,12 @@ builder.Services.ConfigureApplicationCookie(options =>
 	options.LogoutPath = $"/Identity/Account/Logout";
 	options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
 });
+builder.Services.AddAuthentication().AddFacebook(option =>
+{
+	option.AppId = "397648466101988";
+	option.AppSecret = "e016413de3621422099ef2e29f4f4882";
+});
+
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(option =>
 {
@@ -43,6 +49,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
