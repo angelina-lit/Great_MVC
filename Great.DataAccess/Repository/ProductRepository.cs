@@ -30,10 +30,10 @@ namespace GreatFilms.DataAccess.Repository
 				objFromDb.CategoryId = obj.CategoryId;
 				objFromDb.SKU = obj.SKU;
 				objFromDb.Producer = obj.Producer;
-				objFromDb.ListPrice = obj.ListPrice;
+				objFromDb.PreviousPrice = obj.PreviousPrice;
 				objFromDb.Price = obj.Price;
-				objFromDb.Price50 = obj.Price50;
-				objFromDb.Price100 = obj.Price100;
+				objFromDb.Price4 = obj.Price4;
+				objFromDb.Price9 = obj.Price9;
 
 				if (obj.ImageUrl != null)
 				{

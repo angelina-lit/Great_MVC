@@ -73,10 +73,10 @@ namespace GreatFilms.DataAccess.Data
 					"with Tessa (Josephine Landford), Hardin travels to Portugal in search of a woman he wronged in the past – and to find himself. " +
 					"Hoping to win back Tessa, he realises he needs to change his ways before he can make the ultimate commitment. ",
 					SKU = "5G3S9R11101",
-					ListPrice = 99,
+                    PreviousPrice = 99,
 					Price = 90,
-					Price50 = 85,
-					Price100 = 80,
+					Price4 = 85,
+					Price9 = 80,
 					CategoryId = 1,
 					ImageUrl = ""
 				},
@@ -90,10 +90,10 @@ namespace GreatFilms.DataAccess.Data
 					"faction known as the MAXIMALS. With the fate of humanity hanging in the balance Noah (Anthony Ramos) and Elena (Dominique Fishback) " +
 					"will do whatever it takes to help the TRANSFORMERS allies as they engage in the ultimatebattle to save Earth in this exciting new chapter in the TRANSFORMERS saga. ",
 					SKU = "5G3S9R11111",
-					ListPrice = 40,
+                    PreviousPrice = 40,
 					Price = 30,
-					Price50 = 25,
-					Price100 = 20,
+					Price4 = 25,
+					Price9 = 20,
 					CategoryId = 2,
 					ImageUrl = ""
 				},
@@ -106,10 +106,10 @@ namespace GreatFilms.DataAccess.Data
 					"this wild dark comedy finds an oddball group of cops, criminals, tourists and teens converging in a Georgia forest where a 500- " +
 					"pound apex predator has ingested a staggering amount of cocaine and gone on a coke-fueled rampage for more blow … and blood. ",
 					SKU = "5G3S9R33333",
-					ListPrice = 55,
+                    PreviousPrice = 55,
 					Price = 50,
-					Price50 = 40,
-					Price100 = 35,
+					Price4 = 40,
+					Price9 = 35,
 					CategoryId = 3,
 					ImageUrl = ""
 				},
@@ -123,10 +123,10 @@ namespace GreatFilms.DataAccess.Data
 					"make their way across an unknown terrain riddled with dangerous prehistoric creatures in an epic fight to survive. From the writers of " +
 					"A Quiet Place and producer Sam Raimi comes 65, a sci-fi thriller starring Adam Driver, Ariana Greenblatt, and Chloe Coleman. ",
 					SKU = "5G3S9R44444",
-					ListPrice = 70,
+                    PreviousPrice = 70,
 					Price = 65,
-					Price50 = 60,
-					Price100 = 55,
+					Price4 = 60,
+					Price9 = 55,
 					CategoryId = 1,
 					ImageUrl = ""
 				},
@@ -139,10 +139,10 @@ namespace GreatFilms.DataAccess.Data
 					"helicopter parents looking for someone to \"date\" their introverted 19-year-old son, Percy, and bring him out of his shell before " +
 					"he leaves for college. But awkward Percy proves to be a real challenge, and time is running out. She has one summer to make him a man or lose it all. ",
 					SKU = "5G3S9R55555",
-					ListPrice = 30,
+                    PreviousPrice = 30,
 					Price = 27,
-					Price50 = 25,
-					Price100 = 20,
+					Price4 = 25,
+					Price9 = 20,
 					CategoryId = 2,
 					ImageUrl = ""
 				},
@@ -155,10 +155,10 @@ namespace GreatFilms.DataAccess.Data
 					"father who is on a quest to discover the fabled village of the elves, Elfhelm. Taking with him a headstrong reindeer called Blitzen " +
 					"and a loyal pet mouse, Nikolas soon meets his destiny in this magical, comic and endearing story that proves nothing is impossible. ",
 					SKU = "5G3S9R66666",
-					ListPrice = 25,
+                    PreviousPrice = 25,
 					Price = 23,
-					Price50 = 22,
-					Price100 = 20,
+					Price4 = 22,
+					Price9 = 20,
 					CategoryId = 2,
 					ImageUrl = ""
 				}

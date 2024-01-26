@@ -22,24 +22,24 @@ namespace GreatFilms.Models
         [Required]
         public string Producer { get; set; }
         [Required]
-        [Display(Name = "List Price")]
+        [Display(Name = "Previous price")]
         [Range(1, 1000)]
-        public double ListPrice { get; set; }
+        public double PreviousPrice { get; set; }
 
         [Required]
-        [Display(Name = "Price for 1-50")]
+        [Display(Name = "Price for 1-4")]
         [Range(1, 1000)]
         public double Price { get; set; }
 
         [Required]
-        [Display(Name = "Price for 50+")]
+        [Display(Name = "Price for 4-8")]
         [Range(1, 1000)]
-        public double Price50 { get; set; }
+        public double Price4 { get; set; }
 
         [Required]
-        [Display(Name = "Price for 100+")]
+        [Display(Name = "Price for 9+")]
         [Range(1, 1000)]
-        public double Price100 { get; set; }
+        public double Price9 { get; set; }
 
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]

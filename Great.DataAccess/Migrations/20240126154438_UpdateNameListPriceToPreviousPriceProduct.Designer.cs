@@ -4,6 +4,7 @@ using GreatFilms.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreatFilms.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240126154438_UpdateNameListPriceToPreviousPriceProduct")]
+    partial class UpdateNameListPriceToPreviousPriceProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -257,10 +260,10 @@ namespace GreatFilms.DataAccess.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<double>("Price4")
+                    b.Property<double>("Price100")
                         .HasColumnType("float");
 
-                    b.Property<double>("Price9")
+                    b.Property<double>("Price50")
                         .HasColumnType("float");
 
                     b.Property<string>("Producer")
@@ -290,8 +293,8 @@ namespace GreatFilms.DataAccess.Migrations
                             ImageUrl = "",
                             PreviousPrice = 99.0,
                             Price = 90.0,
-                            Price4 = 85.0,
-                            Price9 = 80.0,
+                            Price100 = 80.0,
+                            Price50 = 85.0,
                             Producer = "Hero Fiennes-Tiffin",
                             SKU = "5G3S9R11101",
                             Title = "After Everything"
@@ -304,8 +307,8 @@ namespace GreatFilms.DataAccess.Migrations
                             ImageUrl = "",
                             PreviousPrice = 40.0,
                             Price = 30.0,
-                            Price4 = 25.0,
-                            Price9 = 20.0,
+                            Price100 = 20.0,
+                            Price50 = 25.0,
                             Producer = "Steven Caple Jr.",
                             SKU = "5G3S9R11111",
                             Title = "Transformers: Rise of the Beasts"
@@ -318,8 +321,8 @@ namespace GreatFilms.DataAccess.Migrations
                             ImageUrl = "",
                             PreviousPrice = 55.0,
                             Price = 50.0,
-                            Price4 = 40.0,
-                            Price9 = 35.0,
+                            Price100 = 35.0,
+                            Price50 = 40.0,
                             Producer = "Elizabeth Banks",
                             SKU = "5G3S9R33333",
                             Title = "Cocaine Bear"
@@ -332,8 +335,8 @@ namespace GreatFilms.DataAccess.Migrations
                             ImageUrl = "",
                             PreviousPrice = 70.0,
                             Price = 65.0,
-                            Price4 = 60.0,
-                            Price9 = 55.0,
+                            Price100 = 55.0,
+                            Price50 = 60.0,
                             Producer = "Scott Beck",
                             SKU = "5G3S9R44444",
                             Title = "65 (2023)"
@@ -346,8 +349,8 @@ namespace GreatFilms.DataAccess.Migrations
                             ImageUrl = "",
                             PreviousPrice = 30.0,
                             Price = 27.0,
-                            Price4 = 25.0,
-                            Price9 = 20.0,
+                            Price100 = 20.0,
+                            Price50 = 25.0,
                             Producer = "Alex Saks",
                             SKU = "5G3S9R55555",
                             Title = "No Hard Feelings"
@@ -360,8 +363,8 @@ namespace GreatFilms.DataAccess.Migrations
                             ImageUrl = "",
                             PreviousPrice = 25.0,
                             Price = 23.0,
-                            Price4 = 22.0,
-                            Price9 = 20.0,
+                            Price100 = 20.0,
+                            Price50 = 22.0,
                             Producer = "Gil Kenan",
                             SKU = "5G3S9R66666",
                             Title = "Boy Called Christmas, A"

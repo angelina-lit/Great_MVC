@@ -230,19 +230,19 @@ namespace GreatFilmsWeb.Areas.Customer.Controllers
 
 		private double GetPriceBasedOnQuantity(ShoppingCart shoppingCart)
 		{
-			if (shoppingCart.Count <= 50)
+			if (shoppingCart.Count <= 4)
 			{
 				return shoppingCart.Product.Price;
 			}
 			else
 			{
-				if (shoppingCart.Count <= 100)
+				if (shoppingCart.Count <= 8)
 				{
-					return shoppingCart.Product.Price50;
+					return shoppingCart.Product.Price4;
 				}
 				else
 				{
-					return shoppingCart.Product.Price100;
+					return shoppingCart.Product.Price9;
 				}
 			}
 		}

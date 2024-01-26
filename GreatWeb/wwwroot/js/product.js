@@ -10,7 +10,7 @@ function loadDataTable() {
         "columns": [
             { data: 'title', "width": "25%" },
             { data: 'sku', "width": "15%" },
-            { data: 'listPrice', "width": "10%" },
+            { data: 'price', "width": "10%" },
             { data: 'producer', "width": "15%" },
             { data: 'category.name', "width": "10%" },
             {
