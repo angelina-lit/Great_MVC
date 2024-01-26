@@ -1,7 +1,7 @@
 ﻿@page
 @model RegisterModel
 
-<div class="card shadow border-0 mt-4">
+<div class="card shadow border-0 mt-4 mb-6">
 	<div class="card-header bg-secondary bg-blackbg-gradient m-lg-0 py-4">
 		<div class="row">
 			<div class="col-12 text-center">
@@ -17,7 +17,7 @@
 		</div>
 	</div>
 	<div class="card-body p-4">
-		<div class="row pt-3">
+		<div class="row">
 			<div class="col-md-12">
 				<form id="registerForm" class="row" asp-route-returnUrl="@Model.ReturnUrl" method="post">
 					<h3 class="border-bottom pb-3 mb-4 text-secondary text-center">Create a new account.</h3>
@@ -87,7 +87,7 @@
 			</div>
 			@if (!User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
 			{
-				<div class="col-md-12 p-3 text-center">
+				<div class="col-md-12 p-1 text-center">
 					<section>
 						<p class="divider-text d-flex pt-3">or</p>
 						@{

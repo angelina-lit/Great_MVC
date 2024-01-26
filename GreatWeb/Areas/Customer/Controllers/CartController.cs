@@ -1,5 +1,6 @@
 ﻿using GreatFilms.DataAccess.Repository.IRepository;
 using GreatFilms.Models;
+using GreatFilms.Models.ViewModels;
 using GreatFilms.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,7 @@ using System.Security.Claims;
 
 namespace GreatFilmsWeb.Areas.Customer.Controllers
 {
-	[Area("customer")]
+    [Area("customer")]
 	[Authorize]
 	public class CartController : Controller
 	{
