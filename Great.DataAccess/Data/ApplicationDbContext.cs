@@ -27,7 +27,10 @@ namespace GreatFilms.DataAccess.Data
 			modelBuilder.Entity<Category>().HasData(
 				new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
 				new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
-				new Category { Id = 3, Name = "History", DisplayOrder = 3 }
+				new Category { Id = 3, Name = "Comedy", DisplayOrder = 3 },
+				new Category { Id = 4, Name = "Drama", DisplayOrder = 4 },
+				new Category { Id = 5, Name = "Horror", DisplayOrder = 5 },
+				new Category { Id = 6, Name = "Adventure", DisplayOrder = 6 }
 				);
 
 			modelBuilder.Entity<Company>().HasData(
@@ -73,11 +76,11 @@ namespace GreatFilms.DataAccess.Data
 					"with Tessa (Josephine Landford), Hardin travels to Portugal in search of a woman he wronged in the past – and to find himself. " +
 					"Hoping to win back Tessa, he realises he needs to change his ways before he can make the ultimate commitment. ",
 					SKU = "5G3S9R11101",
-                    PreviousPrice = 99,
+                    PreviousPrice = 100,
 					Price = 90,
 					Price4 = 85,
 					Price9 = 80,
-					CategoryId = 1,
+					CategoryId = 4,
 					ImageUrl = ""
 				},
 				new Product
@@ -90,11 +93,11 @@ namespace GreatFilms.DataAccess.Data
 					"faction known as the MAXIMALS. With the fate of humanity hanging in the balance Noah (Anthony Ramos) and Elena (Dominique Fishback) " +
 					"will do whatever it takes to help the TRANSFORMERS allies as they engage in the ultimatebattle to save Earth in this exciting new chapter in the TRANSFORMERS saga. ",
 					SKU = "5G3S9R11111",
-                    PreviousPrice = 40,
-					Price = 30,
-					Price4 = 25,
-					Price9 = 20,
-					CategoryId = 2,
+                    PreviousPrice = 110,
+					Price = 100,
+					Price4 = 95,
+					Price9 = 90,
+					CategoryId = 1,
 					ImageUrl = ""
 				},
 				new Product
@@ -106,11 +109,11 @@ namespace GreatFilms.DataAccess.Data
 					"this wild dark comedy finds an oddball group of cops, criminals, tourists and teens converging in a Georgia forest where a 500- " +
 					"pound apex predator has ingested a staggering amount of cocaine and gone on a coke-fueled rampage for more blow … and blood. ",
 					SKU = "5G3S9R33333",
-                    PreviousPrice = 55,
-					Price = 50,
-					Price4 = 40,
-					Price9 = 35,
-					CategoryId = 3,
+                    PreviousPrice = 70,
+					Price = 60,
+					Price4 = 55,
+					Price9 = 50,
+					CategoryId = 5,
 					ImageUrl = ""
 				},
 				new Product
@@ -123,11 +126,11 @@ namespace GreatFilms.DataAccess.Data
 					"make their way across an unknown terrain riddled with dangerous prehistoric creatures in an epic fight to survive. From the writers of " +
 					"A Quiet Place and producer Sam Raimi comes 65, a sci-fi thriller starring Adam Driver, Ariana Greenblatt, and Chloe Coleman. ",
 					SKU = "5G3S9R44444",
-                    PreviousPrice = 70,
-					Price = 65,
-					Price4 = 60,
-					Price9 = 55,
-					CategoryId = 1,
+                    PreviousPrice = 80,
+					Price = 70,
+					Price4 = 65,
+					Price9 = 60,
+					CategoryId = 2,
 					ImageUrl = ""
 				},
 				new Product
@@ -139,27 +142,27 @@ namespace GreatFilms.DataAccess.Data
 					"helicopter parents looking for someone to \"date\" their introverted 19-year-old son, Percy, and bring him out of his shell before " +
 					"he leaves for college. But awkward Percy proves to be a real challenge, and time is running out. She has one summer to make him a man or lose it all. ",
 					SKU = "5G3S9R55555",
-                    PreviousPrice = 30,
-					Price = 27,
-					Price4 = 25,
-					Price9 = 20,
-					CategoryId = 2,
+                    PreviousPrice = 75,
+					Price = 65,
+					Price4 = 60,
+					Price9 = 55,
+					CategoryId = 3,
 					ImageUrl = ""
 				},
 				new Product
 				{
 					Id = 6,
-					Title = "Boy Called Christmas, A",
+					Title = "A Boy Called Christmas",
 					Producer = "Gil Kenan",
 					Description = "An ordinary young boy called Nikolas sets out on an extraordinary adventure into the snowy north in search of his " +
 					"father who is on a quest to discover the fabled village of the elves, Elfhelm. Taking with him a headstrong reindeer called Blitzen " +
 					"and a loyal pet mouse, Nikolas soon meets his destiny in this magical, comic and endearing story that proves nothing is impossible. ",
 					SKU = "5G3S9R66666",
-                    PreviousPrice = 25,
-					Price = 23,
-					Price4 = 22,
-					Price9 = 20,
-					CategoryId = 2,
+                    PreviousPrice = 85,
+					Price = 75,
+					Price4 = 70,
+					Price9 = 65,
+					CategoryId = 6,
 					ImageUrl = ""
 				}
 				);
