@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace GreatFilmsWeb.Areas.Customer.Controllers
 {
-    [Area("customer")]
+	[Area("customer")]
 	[Authorize]
 	public class CartController : Controller
 	{
@@ -127,7 +127,7 @@ namespace GreatFilmsWeb.Areas.Customer.Controllers
 				//it is a regular customer account and we need to capture payment
 				//stripe logic
 
-				var domain = "https://localhost:7299/";
+				var domain = Request.Scheme + "://" + Request.Host.Value + "/";
 				var options = new SessionCreateOptions
 				{
 					SuccessUrl = domain + $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
@@ -221,7 +221,7 @@ namespace GreatFilmsWeb.Areas.Customer.Controllers
 
 		public IActionResult Remove(int cartId)
 		{
-			var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId, tracked:true);
+			var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId, tracked: true);
 			HttpContext.Session.SetInt32(SD.SessionCart, _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == cartFromDb.ApplicationUserId).Count() - 1);
 			_unitOfWork.ShoppingCart.Remove(cartFromDb);
 			_unitOfWork.Save();
