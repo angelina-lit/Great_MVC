@@ -34,7 +34,7 @@ namespace GreatFilmsWeb.Areas.Admin.Controllers
 
 			RoleManagmentVM RoleVM = new RoleManagmentVM()
 			{
-				ApplicationUser = _db.applicationUser.Include(u => u.Company).FirstOrDefault(u => u.Id == userId),
+				ApplicationUser = _db.ApplicationUsers.Include(u => u.Company).FirstOrDefault(u => u.Id == userId),
 				RoleList = _db.Roles.Select(i => new SelectListItem
 				{
 					Text = i.Name,
@@ -61,7 +61,7 @@ namespace GreatFilmsWeb.Areas.Admin.Controllers
 			if (!(roleManagmentVM.ApplicationUser.Role == oldRole))
 			{
 				//a role was updated
-				ApplicationUser applicationUser = _db.applicationUser.FirstOrDefault(u => u.Id == roleManagmentVM.ApplicationUser.Id);
+				ApplicationUser applicationUser = _db.ApplicationUsers.FirstOrDefault(u => u.Id == roleManagmentVM.ApplicationUser.Id);
 				if(roleManagmentVM.ApplicationUser.Role == SD.Role_Company)
 				{
 					applicationUser.CompanyId = roleManagmentVM.ApplicationUser.CompanyId;
@@ -85,7 +85,7 @@ namespace GreatFilmsWeb.Areas.Admin.Controllers
 		[HttpGet]
 		public IActionResult GetAll()
 		{
-			List<ApplicationUser> objUserList = _db.applicationUser.Include(u => u.Company).ToList();
+			List<ApplicationUser> objUserList = _db.ApplicationUsers.Include(u => u.Company).ToList();
 
 			var userRoles = _db.UserRoles.ToList();
 			var roles = _db.Roles.ToList();
@@ -110,7 +110,7 @@ namespace GreatFilmsWeb.Areas.Admin.Controllers
 		[HttpPost]
 		public IActionResult LockUnlock([FromBody] string id)
 		{
-			var objFromDb = _db.applicationUser.FirstOrDefault(u => u.Id == id);
+			var objFromDb = _db.ApplicationUsers.FirstOrDefault(u => u.Id == id);
 			if (objFromDb == null)
 			{
 				return Json(new { success = false, message = "Error while Locking/Unlocking" });

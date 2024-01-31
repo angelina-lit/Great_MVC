@@ -61,7 +61,7 @@ namespace GreatFilms.DataAccess.DbInitializer
 					City = "Almaty"
 				}, "Admin123*").GetAwaiter().GetResult();
 
-				ApplicationUser user = _db.applicationUser.FirstOrDefault(u => u.Email == "admin@gmail.com");
+				ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@gmail.com");
 				_userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
 			}
 			return;

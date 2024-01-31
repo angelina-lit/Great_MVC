@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GreatFilms.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240126151809_UpdatePriceNamesProduct")]
-    partial class UpdatePriceNamesProduct
+    [Migration("20240131091557_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,7 +62,25 @@ namespace GreatFilms.DataAccess.Migrations
                         {
                             Id = 3,
                             DisplayOrder = 3,
-                            Name = "History"
+                            Name = "Comedy"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DisplayOrder = 4,
+                            Name = "Drama"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DisplayOrder = 5,
+                            Name = "Horror"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DisplayOrder = 6,
+                            Name = "Adventure"
                         });
                 });
 
@@ -254,16 +272,16 @@ namespace GreatFilms.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("ListPrice")
+                    b.Property<double>("PreviousPrice")
                         .HasColumnType("float");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<double>("Price100")
+                    b.Property<double>("Price4")
                         .HasColumnType("float");
 
-                    b.Property<double>("Price50")
+                    b.Property<double>("Price9")
                         .HasColumnType("float");
 
                     b.Property<string>("Producer")
@@ -288,13 +306,13 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryId = 1,
+                            CategoryId = 4,
                             Description = "Hardin (Hero Fiennes Tiffin) is struggling to move forward. Besieged by writer’s block and the crushing breakup with Tessa (Josephine Landford), Hardin travels to Portugal in search of a woman he wronged in the past – and to find himself. Hoping to win back Tessa, he realises he needs to change his ways before he can make the ultimate commitment. ",
                             ImageUrl = "",
-                            ListPrice = 99.0,
+                            PreviousPrice = 100.0,
                             Price = 90.0,
-                            Price100 = 80.0,
-                            Price50 = 85.0,
+                            Price4 = 85.0,
+                            Price9 = 80.0,
                             Producer = "Hero Fiennes-Tiffin",
                             SKU = "5G3S9R11101",
                             Title = "After Everything"
@@ -302,13 +320,13 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CategoryId = 2,
+                            CategoryId = 1,
                             Description = "OPTIMUS PRIME and the AUTOBOTS take on their biggest challenge yet in this adrenaline-fueled adbentire with pulse-pounding action. When a new threat capable of destroying the entire planet emerges, they must team up with a powerful faction known as the MAXIMALS. With the fate of humanity hanging in the balance Noah (Anthony Ramos) and Elena (Dominique Fishback) will do whatever it takes to help the TRANSFORMERS allies as they engage in the ultimatebattle to save Earth in this exciting new chapter in the TRANSFORMERS saga. ",
                             ImageUrl = "",
-                            ListPrice = 40.0,
-                            Price = 30.0,
-                            Price100 = 20.0,
-                            Price50 = 25.0,
+                            PreviousPrice = 110.0,
+                            Price = 100.0,
+                            Price4 = 95.0,
+                            Price9 = 90.0,
                             Producer = "Steven Caple Jr.",
                             SKU = "5G3S9R11111",
                             Title = "Transformers: Rise of the Beasts"
@@ -316,13 +334,13 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CategoryId = 3,
+                            CategoryId = 5,
                             Description = "Inspired by the 1985 true story of a drug runner's plane crash, missing cocaine, and the black bear that ate it, this wild dark comedy finds an oddball group of cops, criminals, tourists and teens converging in a Georgia forest where a 500- pound apex predator has ingested a staggering amount of cocaine and gone on a coke-fueled rampage for more blow … and blood. ",
                             ImageUrl = "",
-                            ListPrice = 55.0,
-                            Price = 50.0,
-                            Price100 = 35.0,
-                            Price50 = 40.0,
+                            PreviousPrice = 70.0,
+                            Price = 60.0,
+                            Price4 = 55.0,
+                            Price9 = 50.0,
                             Producer = "Elizabeth Banks",
                             SKU = "5G3S9R33333",
                             Title = "Cocaine Bear"
@@ -330,13 +348,13 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Description = "After a catastrophic crash on an unknown planet, pilot Mills (Adam Driver) quickly discovers he's actually stranded on Earth... 65 million years ago. Now, with only one chance at rescue, Mills and the only other survivor, Koa (Ariana Greenblatt), must make their way across an unknown terrain riddled with dangerous prehistoric creatures in an epic fight to survive. From the writers of A Quiet Place and producer Sam Raimi comes 65, a sci-fi thriller starring Adam Driver, Ariana Greenblatt, and Chloe Coleman. ",
                             ImageUrl = "",
-                            ListPrice = 70.0,
-                            Price = 65.0,
-                            Price100 = 55.0,
-                            Price50 = 60.0,
+                            PreviousPrice = 80.0,
+                            Price = 70.0,
+                            Price4 = 65.0,
+                            Price9 = 60.0,
                             Producer = "Scott Beck",
                             SKU = "5G3S9R44444",
                             Title = "65 (2023)"
@@ -344,13 +362,13 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            CategoryId = 2,
+                            CategoryId = 3,
                             Description = "Maddie thinks she's found the answer to her financial troubles when she discovers an intriguing job listing: wealthy helicopter parents looking for someone to \"date\" their introverted 19-year-old son, Percy, and bring him out of his shell before he leaves for college. But awkward Percy proves to be a real challenge, and time is running out. She has one summer to make him a man or lose it all. ",
                             ImageUrl = "",
-                            ListPrice = 30.0,
-                            Price = 27.0,
-                            Price100 = 20.0,
-                            Price50 = 25.0,
+                            PreviousPrice = 75.0,
+                            Price = 65.0,
+                            Price4 = 60.0,
+                            Price9 = 55.0,
                             Producer = "Alex Saks",
                             SKU = "5G3S9R55555",
                             Title = "No Hard Feelings"
@@ -358,16 +376,16 @@ namespace GreatFilms.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            CategoryId = 2,
+                            CategoryId = 6,
                             Description = "An ordinary young boy called Nikolas sets out on an extraordinary adventure into the snowy north in search of his father who is on a quest to discover the fabled village of the elves, Elfhelm. Taking with him a headstrong reindeer called Blitzen and a loyal pet mouse, Nikolas soon meets his destiny in this magical, comic and endearing story that proves nothing is impossible. ",
                             ImageUrl = "",
-                            ListPrice = 25.0,
-                            Price = 23.0,
-                            Price100 = 20.0,
-                            Price50 = 22.0,
+                            PreviousPrice = 85.0,
+                            Price = 75.0,
+                            Price4 = 70.0,
+                            Price9 = 65.0,
                             Producer = "Gil Kenan",
                             SKU = "5G3S9R66666",
-                            Title = "Boy Called Christmas, A"
+                            Title = "A Boy Called Christmas"
                         });
                 });
 

@@ -5,10 +5,18 @@
 namespace GreatFilms.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class AddImageUrlToProduct : Migration
+    public partial class RemoveImageUrl : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "ImageUrl",
+                table: "Products");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
                 name: "ImageUrl",
@@ -58,14 +66,6 @@ namespace GreatFilms.DataAccess.Migrations
                 keyValue: 6,
                 column: "ImageUrl",
                 value: "");
-        }
-
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropColumn(
-                name: "ImageUrl",
-                table: "Products");
         }
     }
 }

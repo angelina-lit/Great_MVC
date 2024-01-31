@@ -34,11 +34,12 @@ namespace GreatFilms.DataAccess.Repository
 				objFromDb.Price = obj.Price;
 				objFromDb.Price4 = obj.Price4;
 				objFromDb.Price9 = obj.Price9;
+				objFromDb.ProductImages = obj.ProductImages;
 
-				if (obj.ImageUrl != null)
-				{
-					objFromDb.ImageUrl = obj.ImageUrl;
-				}
+				//if (obj.ImageUrl != null)
+				//{
+				//	objFromDb.ImageUrl = obj.ImageUrl;
+				//}
 			}
 		}
 	}

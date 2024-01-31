@@ -14,11 +14,12 @@ namespace GreatFilms.DataAccess.Data
 
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Product> Products { get; set; }
-		public DbSet<ApplicationUser> applicationUser { get; set; }
+		public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 		public DbSet<Company> Companies { get; set; }
 		public DbSet<ShoppingCart> ShoppingCarts { get; set; }
 		public DbSet<OrderHeader> OrderHeaders { get; set; }
 		public DbSet<OrderDetail> OrderDetails { get; set; }
+		public DbSet<ProductImage> ProductImages { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -80,8 +81,7 @@ namespace GreatFilms.DataAccess.Data
 					Price = 90,
 					Price4 = 85,
 					Price9 = 80,
-					CategoryId = 4,
-					ImageUrl = ""
+					CategoryId = 4
 				},
 				new Product
 				{
@@ -97,8 +97,7 @@ namespace GreatFilms.DataAccess.Data
 					Price = 100,
 					Price4 = 95,
 					Price9 = 90,
-					CategoryId = 1,
-					ImageUrl = ""
+					CategoryId = 1
 				},
 				new Product
 				{
@@ -113,8 +112,7 @@ namespace GreatFilms.DataAccess.Data
 					Price = 60,
 					Price4 = 55,
 					Price9 = 50,
-					CategoryId = 5,
-					ImageUrl = ""
+					CategoryId = 5
 				},
 				new Product
 				{
@@ -130,8 +128,7 @@ namespace GreatFilms.DataAccess.Data
 					Price = 70,
 					Price4 = 65,
 					Price9 = 60,
-					CategoryId = 2,
-					ImageUrl = ""
+					CategoryId = 2
 				},
 				new Product
 				{
@@ -146,8 +143,7 @@ namespace GreatFilms.DataAccess.Data
 					Price = 65,
 					Price4 = 60,
 					Price9 = 55,
-					CategoryId = 3,
-					ImageUrl = ""
+					CategoryId = 3
 				},
 				new Product
 				{
@@ -162,8 +158,7 @@ namespace GreatFilms.DataAccess.Data
 					Price = 75,
 					Price4 = 70,
 					Price9 = 65,
-					CategoryId = 6,
-					ImageUrl = ""
+					CategoryId = 6
 				}
 				);
 		}
